@@ -1,9 +1,14 @@
-import { Router } from "express";
+import express, { Request, Response } from "express";
 
-const router = Router();
+const app = express();
 
-router.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
 	res.send("Hello from Express + TypeScript 👋");
 });
 
-export default router;
+
+app.listen(3000, () => {
+	console.log("listenning on port: 3000")
+})
+
+
