@@ -32,3 +32,5 @@ router.post("/new:url", (req: Request, res: Response) => {
 	query("INSERT INTO urls (target_url, short_url) VALUES (?, ?)", [url, shortUrl]);
 	res.status(200).send();
 });
+
+export default router;
