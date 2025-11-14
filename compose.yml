@@ -4,13 +4,13 @@ services:
     build: ./backend/
     env_file:
       - .env
-    environment:
-      POSTGRES_URL: ${POSTGRES_URL:?POSTGRES_URL is missing}
     ports:
       - 3000:3000
     volumes:
       - ./backend/app:/app:rw
       - /app/node_modules
+    depends_on:
+      - db
     restart: unless-stopped
 
   db:
